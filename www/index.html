@@ -1,0 +1,210 @@
+<!--
+This site by Claire Chan
+CMU SCS '15
+This site is still in process! proper styling and resource credits to be added soon.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Claire Chan - Creative Portfolio</title>
+	
+		<script type="text/javascript" src="jquery-1.8.3.js"></script>	
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+		
+		<!--fancybox-->
+		<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+		
+    <!--fonts-->
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200' rel='stylesheet' type='text/css'>
+		
+		<!--fbAlbum.js-->
+		<script src="jquery.fbAlbum.js"></script>
+		<script src="fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+		<script src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+        
+		<script type="text/javascript">
+		//redirect script
+		var browser = navigator.appName
+		var ver = navigator.appVersion
+		var thestart = parseFloat(ver.indexOf("MSIE"))+1
+		var brow_ver = parseFloat(ver.substring(thestart+4,thestart+7))
+		if (browser=="Microsoft Internet Explorer")
+		{
+			window.location="redirect.html";
+		}
+
+		if (jQuery.browser.mobile) window.location = "mobile.html";
+		
+		$(document).ready(function(){
+				$("#workpgs").hide();
+				$("a#single_image").fancybox();
+				$("a.grouped_elements").fancybox();
+				
+				$("#workbtn").hover(function(e){
+					$("#workpgs").fadeIn(400);
+				});
+				
+				$("#workpgs").mouseout(function(e){
+					$("#workpgs").hide();
+				});
+				
+				$("#homebtn").hover(function(e){
+					$("#workpgs").hide();
+				});
+				
+				$("#aboutbtn").hover(function(e){
+					$("#workpgs").hide();
+				});
+				
+				$("#contactbtn").hover(function(e){
+					$("#workpgs").hide();
+				});
+				
+				$(function() {
+                $('ul.nav a').bind('click',function(event){
+                    var $anchor = $(this);
+                    $('html, body').stop().animate({
+                        scrollLeft: $($anchor.attr('href')).offset().left
+                    }, 1000);
+                    event.preventDefault();
+                });
+                });
+		});
+       </script>
+		<!--tracking script-->
+	   <script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-39198567-1']);
+		  _gaq.push(['_trackPageview']);
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+	   </script>
+    </head>
+	
+    <body>
+        <div class="section" id="home">
+            <h2>Claire Chan</h2>
+            <p>Creative Portfolio</p>	
+            <ul class="nav">
+                <li><a href="#home" id="homebtn">Home</li>
+                <li><a href="#about" id="aboutbtn">About</a></li>
+                <li><a href="#work" id="workbtn">Work</a></li>
+					<ul id="workpgs">
+						<li><a href="#web">Web</a></li>
+						<li><a href="#graphic">Graphic</a></li>
+					</ul>
+				<li><a href="#contact" id="contactbtn">Contact</a></li>
+            </ul>
+        </div>
+        <div class="section" id="about">
+            <h2>About</h2>
+				<div id="aboutbg">
+					<div id="space">.</div>
+					<p>
+						Hello! My name is Claire Chan. I'm currently a second year Computer Science student at Carnegie Mellon University.
+						I have a passion for creative design and web development, and I've created this site to share some of my recent projects. 
+                        I aim to build bridges between elegant code and beautiful design. 
+                        I hope to someday create products that will impact people all over the world. <br><br>
+                        
+						I build from scratch because it gives me full control over my ideas.
+						All external resources I use in my work are created from stock images and open source code. 
+						My favorite programming language is Python and my favorite imaging program is GIMP.
+						I am considering minoring in either Communication Design or Human Computer Interaction.
+					</p>
+				</div>
+        </div>
+		<div class="section" id="web">
+			<h2>Web</h2>
+				<div id="workbg">
+				<div id="space">.</div>
+				<div id="par">	
+					<font id="aim">I aim to build beautiful, interactive sites that capture your attention.</font><br>
+					<br>
+					<ul id="inner">
+						<a class="grouped_elements" rel="asa" href="work/sites/asa2.png"><img id="sitethumb" class="thumb" src="work/sites/asa2.png" alt=""/></a>
+						<b>View:</b> <a id="links" href="http://cmu-asa.com" target="blank">CMU Asian Students Association website</a><br>
+						<b>Concept:</b> We wanted a warm and inviting site to show off our sense of community. 
+						I used polaroids, weathered paper, bright colors, and playful fonts to create a unique scrapbook feel.<br>
+						<b>Features:</b> full jQuery animation, user can add photos through facebook
+					</ul>
+					<br>
+					<ul id="inner">
+						<a class="grouped_elements" rel="bs" href="work/sites/bigstraw.png"><img id="sitethumb" class="thumb" src="work/sites/bigstraw.png" alt=""/></a>
+						<b>View:</b> <a id="links" href="http://www.bigstrawmagazine.org/" target="blank">Big Straw Magazine website</a><br>
+						<b>Concept:</b> The previous version of the site was serious and business professional. 
+						We went for a more fun, playful feel to reflect the new look of the magazine. 
+						Collaborators: Amanda Ko, Stephanie Yeung<br>
+						<b>Features:</b> jQuery animated "bubble" navigation
+					</ul>
+					<br>
+					Current Projects:<br>
+					<ul id="inner">
+						<li>2013 CMU International Film Festival - site redesign and e-commerce implementation</li>
+						<li>CMU Ballroom Dance Club - site redesign</li>
+					</ul>
+				</div>
+				</div>
+            <ul class="nav">
+                <li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+                <li>Work</li>
+					<ul id="workpgs">
+						<li><a href="#web">Web</a></li>
+						<li><a href="#graphic">Graphic</a></li>
+					</ul>
+				<li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="section" id="graphic">
+			<h2>Graphic</h2>
+				<div id="workbg">
+				<div id="space">.</div>
+				<p>	
+					Logos <br><br>
+					<a class="grouped_elements" rel="logos" title="Logo for <a href='http://startupandplay.com/'>Startup and Play(link)</a> startup convetion" href="work/logos/startupandplay.png"><img class="thumb" src="work/logos/startupandplay.png" alt=""/></a>
+					<a class="grouped_elements" rel="logos" title="KiltOn app logo" href="work/logos/kologo.png"><img class="thumb" src="work/logos/kologo.png" alt=""/></a>
+					<a class="grouped_elements" rel="logos" title="KiltOn app splash screen" href="work/logos/kosplash.png"><img class="thumb" src="work/logos/kosplash.png" alt=""/></a>
+					<a class="grouped_elements" rel="logos" title="Exiled Ninja game logo" href="work/logos/exiledninja.png"><img class="thumb" src="work/logos/exiledninja.png" alt=""/></a>
+					<a class="grouped_elements" rel="logos" title="Beat Beat game logo" href="work/logos/beatbeat.png"><img class="thumb" src="work/logos/beatbeat.png" alt=""/></a>
+					<br>
+					<br>
+					<br>
+					Advertisements and Articles
+					<br><br>
+				    <a class="grouped_elements" rel="ana" title="Email ad for Red Sheet Design" href="work/ads_and_articles/witcher.png"><img class="thumb" src="work/ads_and_articles/witcher.png" alt=""/></a>
+					<a class="grouped_elements" rel="ana" title="Email ad for Red Sheet Desgin" href="work/ads_and_articles/ddbr.png"><img class="thumb" src="work/ads_and_articles/ddbr.png" alt=""/></a>
+					<a class="grouped_elements" rel="ana" title="article design for CMU's Big Straw Magazine" href="work/ads_and_articles/donations.png"><img class="thumb" src="work/ads_and_articles/donations.png" alt=""/></a>
+					<a class="grouped_elements" rel="ana" title="article design for CMU's Big Straw Magazine" href="work/ads_and_articles/chinatown.png"><img class="thumb" src="work/ads_and_articles/chinatown.png" alt=""/></a>		
+				</p>
+				</div>
+		</div>
+		<div class="section" id="contact">
+            <h2>Contact</h2>
+				<div id="contactbg">
+					<div id="space">.</div>
+					<p>
+						Claire Chan<br>
+						Carnegie Mellon University<br>
+						School of Computer Science '15<br>
+						<br>
+						
+						cchan@cmu.edu<br>
+						<br>
+						Mailbox:<br>
+						CARNEGIE MELLON UNIVERSITY<br>
+						SMC 5037<br>
+						PITTSBURGH, PA 15289<br>
+						<br>
+					</p>
+				</div>	
+        </div>
+    </body>
+</html>
