@@ -1,0 +1,186 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Oxygen', sans-serif;
+	background-color: #DDD;
+	font-size: 1em;
+}
+
+a {
+	text-decoration: none;
+}
+
+.mailto {
+	color: #3399DD;
+}
+
+.page {
+	margin: 75px 0 50px 0;
+	border-top-style: dashed;
+	border-color: #666;
+}
+
+@media (max-width: 1170px) {
+	#staff {
+		padding-bottom: 200px;
+	}
+}
+
+#register {
+	padding-bottom: 50px;
+}
+
+#home {
+	position: relative;
+	height: 750px;
+	z-index: 1;
+}
+
+#header {
+	position: absolute;
+	margin-top: 7%;
+	margin-left: 13%;
+	background-color: #FAFAFA;
+	width: 75%;
+	min-width: 550px;
+	height: 97%;
+	text-align: center;
+}
+
+#intro {
+	margin-top: -3%;
+	margin-left: 15.5%;
+	width: 71%;
+	text-align: left;
+	display: table;
+	padding: 10px 0 10px 0;
+	z-index: 1;
+}
+
+#intro_text {
+	position: relative;
+	padding: 25px 30px 25px 30px;
+	display: table-cell;
+	vertical-align: middle;
+	width: 92%;
+	min-width: 400px;
+	font-size: 1.2em;
+}
+
+#nav_box {
+	width: 100%;
+	height: 3.5em;
+	position: fixed;
+	background-color: #3399DD;
+	z-index: 2;
+	border-radius: 0 0 0 85px;
+	-moz-border-radius: 0 0 0 85px;
+}
+
+#nav, #contact {
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #FFF;
+	font-size: 1.3em;
+	position: fixed;
+	margin: 1.3em 0 0 33em;
+	z-index: 3;
+}
+
+#contact {
+	margin: 2em 0 0 12.75%;
+	font-size: 1em;
+	z-index: 2;
+}
+
+#contact a {
+	color: #FFF;
+	padding-right: 2em;
+}
+
+#email:hover {
+	color: #444;
+}
+
+#nav a {
+	padding-right: 1em;
+}
+
+#nav a:hover {
+	cursor: pointer;
+	color: #FF4400; 
+}
+
+@media (max-width: 1000px) {
+	#nav {
+		margin-left: 12.75%;
+	}
+	
+	#contact {
+		margin-top: 0.25em;
+	}	
+}
+
+h1 {
+	font-family: 'Sanchez', serif;
+	color:  #3399DD;
+	padding-top: 0.4em;
+	text-align: center;
+	margin-top: 10%;
+	font-size: 5.2em;
+	font-weight: 400;
+}
+
+h2 {
+	margin-top: 1em;
+	color: #FF4400;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+}
+
+h3 {
+	margin-top: 0em;
+	color: #000;
+}
+
+.page_content {
+	margin-left: 15%;
+}
+
+.row {
+	margin: 0 0 3% 2%;
+}
+
+#tutors_row {
+	margin-bottom: 1%;
+}
+
+#sat_row1 {
+	margin-bottom: 1%;
+}
+
+.text, .column_text {
+	vertical-align: top;
+	color: #666;
+	display: inline-block;
+}
+
+.text {
+	width: 83%;
+}
+
+.column_text {
+	width: 42%;
+}
+
+.inline_img {
+	vertical-align: top;
+	margin: 20px 0 20px 0;
+	width: 26%;
+	display: inline-block;
+}
+
+#inline_img_right {
+	padding-left: 14%;
+}

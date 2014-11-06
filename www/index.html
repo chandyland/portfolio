@@ -1,14 +1,15 @@
 <!--
 This site by Claire Chan
 CMU SCS '15
-This site is still in process! proper styling and resource credits to be added soon.
+This site is still in process! 
 -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <title>Claire Chan - Creative Portfolio</title>
+    <title>Claire Chan - Creative Portfolio</title>
 	
 		<script type="text/javascript" src="jquery-1.8.3.js"></script>	
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
@@ -17,7 +18,7 @@ This site is still in process! proper styling and resource credits to be added s
 		<script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 		<link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 		
-    <!--fonts-->
+   		<!--fonts-->
 		<link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:200' rel='stylesheet' type='text/css'>
 		
@@ -28,15 +29,6 @@ This site is still in process! proper styling and resource credits to be added s
 		<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
         
 		<script type="text/javascript">
-		//redirect script
-		var browser = navigator.appName
-		var ver = navigator.appVersion
-		var thestart = parseFloat(ver.indexOf("MSIE"))+1
-		var brow_ver = parseFloat(ver.substring(thestart+4,thestart+7))
-		if (browser=="Microsoft Internet Explorer")
-		{
-			window.location="redirect.html";
-		}
 
 		if (jQuery.browser.mobile) window.location = "mobile.html";
 		
@@ -45,24 +37,20 @@ This site is still in process! proper styling and resource credits to be added s
 				$("a#single_image").fancybox();
 				$("a.grouped_elements").fancybox();
 				
-				$("#workbtn").hover(function(e){
-					$("#workpgs").fadeIn(400);
+				$("#homebtn").click(function(e){
+					$("#workpgs").fadeOut(400);
 				});
-				
-				$("#workpgs").mouseout(function(e){
-					$("#workpgs").hide();
+
+				$("#aboutbtn").click(function(e){
+					$("#workpgs").fadeOut(400);
 				});
-				
-				$("#homebtn").hover(function(e){
-					$("#workpgs").hide();
+
+				$("#contactbtn").click(function(e){
+					$("#workpgs").fadeOut(400);
 				});
-				
-				$("#aboutbtn").hover(function(e){
-					$("#workpgs").hide();
-				});
-				
-				$("#contactbtn").hover(function(e){
-					$("#workpgs").hide();
+
+				$("#workbtn").click(function(e){
+					$("#workpgs").fadeToggle(400);
 				});
 				
 				$(function() {
@@ -97,30 +85,26 @@ This site is still in process! proper styling and resource credits to be added s
                 <li><a href="#home" id="homebtn">Home</li>
                 <li><a href="#about" id="aboutbtn">About</a></li>
                 <li><a href="#work" id="workbtn">Work</a></li>
-					<ul id="workpgs">
-						<li><a href="#web">Web</a></li>
-						<li><a href="#graphic">Graphic</a></li>
-					</ul>
-				<li><a href="#contact" id="contactbtn">Contact</a></li>
+						<ul id="workpgs">
+							<li><a href="#web">Web</a></li>
+							<li><a href="#graphic">Graphic</a></li>
+						</ul>
+						<li><a href="#contact" id="contactbtn">Contact</a></li>
             </ul>
         </div>
         <div class="section" id="about">
-            <h2>About</h2>
-				<div id="aboutbg">
-					<div id="space">.</div>
-					<p>
-						Hello! My name is Claire Chan. I'm currently a second year Computer Science student at Carnegie Mellon University.
-						I have a passion for creative design and web development, and I've created this site to share some of my recent projects. 
-                        I aim to build bridges between elegant code and beautiful design. 
-                        I hope to someday create products that will impact people all over the world. <br><br>
-                        
-						I build from scratch because it gives me full control over my ideas.
-						All external resources I use in my work are created from stock images and open source code. 
-						My favorite programming language is Python and my favorite imaging program is GIMP.
-						I am considering minoring in either Communication Design or Human Computer Interaction.
-					</p>
-				</div>
+	        <h2>About</h2>
+			<div id="aboutbg">
+				<div id="space">.</div>
+				<p>
+					Hello! My name's Claire Chan. I'm currently a fourth year Computer Science student at Carnegie Mellon University with a minor in Human Computer Interaction. I'm passionate about creative design and development and I aim to build bridges between elegant code and beautiful design. I have a passion to create and I dream of developing products that will impact people all over the world.
+					<br><br>
+                    
+					I build from scratch because it gives me full control over my ideas. All external resources used in my work are created from stock images and open source code. 
+				</p>
+			</div>
         </div>
+
 		<div class="section" id="web">
 			<h2>Web</h2>
 				<div id="workbg">
@@ -130,7 +114,7 @@ This site is still in process! proper styling and resource credits to be added s
 					<br>
 					<ul id="inner">
 						<a class="grouped_elements" rel="asa" href="work/sites/asa2.png"><img id="sitethumb" class="thumb" src="work/sites/asa2.png" alt=""/></a>
-						<b>View:</b> <a id="links" href="http://cmu-asa.com" target="blank">CMU Asian Students Association website</a><br>
+						<b>View:</b> <a class="links" href="http://cmu-asa.com" target="blank">CMU Asian Students Association website</a><br>
 						<b>Concept:</b> We wanted a warm and inviting site to show off our sense of community. 
 						I used polaroids, weathered paper, bright colors, and playful fonts to create a unique scrapbook feel.<br>
 						<b>Features:</b> full jQuery animation, user can add photos through facebook
@@ -138,18 +122,13 @@ This site is still in process! proper styling and resource credits to be added s
 					<br>
 					<ul id="inner">
 						<a class="grouped_elements" rel="bs" href="work/sites/bigstraw.png"><img id="sitethumb" class="thumb" src="work/sites/bigstraw.png" alt=""/></a>
-						<b>View:</b> <a id="links" href="http://www.bigstrawmagazine.org/" target="blank">Big Straw Magazine website</a><br>
+						<b>View:</b> <a class="links" href="http://www.bigstrawmagazine.org/" target="blank">Big Straw Magazine website</a><br>
 						<b>Concept:</b> The previous version of the site was serious and business professional. 
 						We went for a more fun, playful feel to reflect the new look of the magazine. 
 						Collaborators: Amanda Ko, Stephanie Yeung<br>
-						<b>Features:</b> jQuery animated "bubble" navigation
+						<b>Features:</b> animated "bubble" navigation
 					</ul>
 					<br>
-					Current Projects:<br>
-					<ul id="inner">
-						<li>2013 CMU International Film Festival - site redesign and e-commerce implementation</li>
-						<li>CMU Ballroom Dance Club - site redesign</li>
-					</ul>
 				</div>
 				</div>
             <ul class="nav">
@@ -177,7 +156,7 @@ This site is still in process! proper styling and resource credits to be added s
 					<br>
 					<br>
 					<br>
-					Advertisements and Articles
+					Advertisement and Print
 					<br><br>
 				    <a class="grouped_elements" rel="ana" title="Email ad for Red Sheet Design" href="work/ads_and_articles/witcher.png"><img class="thumb" src="work/ads_and_articles/witcher.png" alt=""/></a>
 					<a class="grouped_elements" rel="ana" title="Email ad for Red Sheet Desgin" href="work/ads_and_articles/ddbr.png"><img class="thumb" src="work/ads_and_articles/ddbr.png" alt=""/></a>
@@ -188,23 +167,22 @@ This site is still in process! proper styling and resource credits to be added s
 		</div>
 		<div class="section" id="contact">
             <h2>Contact</h2>
-				<div id="contactbg">
-					<div id="space">.</div>
-					<p>
-						Claire Chan<br>
-						Carnegie Mellon University<br>
-						School of Computer Science '15<br>
-						<br>
-						
-						cchan@cmu.edu<br>
-						<br>
-						Mailbox:<br>
-						CARNEGIE MELLON UNIVERSITY<br>
-						SMC 5037<br>
-						PITTSBURGH, PA 15289<br>
-						<br>
-					</p>
-				</div>	
-        </div>
+			<div id="contactbg"></div>
+	        <div id="contact_text">
+	        	<div id="space">.</div>
+				<p>
+					Claire Chan<br>
+					Carnegie Mellon University<br>
+					School of Computer Science '15<br>
+					
+					<br>
+
+					cchan@cmu.edu<br>
+				    <a class="contactLink" href="http://www.linkedin.com/in/clairehchan" target="blank">	LinkedIn</a><br>
+				    <a class="contactLink" href="https://github.com/chandyland" target="blank">GitHub</a><br>
+				    <br>
+				</p>
+			</div>
+		</div>	
     </body>
 </html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<a id="top"></a>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+<!--scrollers-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<link href="jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="jquery.mousewheel.min.js"></script>
+<script src="jquery.mCustomScrollbar.js"></script>
+
+<script src="typeface-0.14.js"></script>
+<script src="sketchy_medium.typeface.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+function doMove(obj) {
+  obj.style.left = parseInt(obj.style.left)-1+'px';
+	setTimeout(function() { doMove(obj) },25); // call doMove in 1msec
+  if (obj.style.left == '-115px'){
+	obj.style.left = '630px';
+  }
+}
+
+function init() {
+  var p1 = document.getElementById('p1'); 
+  p1.style.left = '-20px'; 
+  var p2 = document.getElementById('p2'); 
+  p2.style.left = '120px';
+  var p3 = document.getElementById('p3'); 
+  p3.style.left = '255px'; 
+  var p4 = document.getElementById('p4'); 
+  p4.style.left = '395px'; 
+  var p5 = document.getElementById('p5'); 
+  p5.style.left = '560px';   
+  doMove(p1); 
+  doMove(p2); 
+  doMove(p3); 
+  doMove(p4); 
+  doMove(p5); 
+}
+
+window.onload = init;
+
+
+	$("#home").click(function(){
+		goto('#hometext');
+	});
+
+	$("#about").click(function(){
+		goto('#abouttext');
+	});
+	
+	$("#attend").click(function(){
+		goto('#attendtext');
+	});
+	
+	$("#buytix").click(function(){
+		goto('#attendtext');
+	});
+	
+	$("#buyhere").click(function(){
+		goto('#attendtext');
+	});
+	
+	$("#program").click(function(){
+		goto('#programtext');
+	});
+	
+	$("#participate").click(function(){
+		goto('#participatetext');
+	});
+	
+	$("#updates").click(function(){
+		goto('#updatestext');
+	});
+	
+	$("#support").click(function(){
+		window.open("http://www.cmu.edu/faces/2013sponsor.pdf", '_blank');
+	});
+	
+	$("#sponsorfest").click(function(){
+		window.open("http://www.cmu.edu/faces/2013sponsor.pdf", '_blank');
+	});
+	
+	$("#contact").click(function(){
+		goto('#contacttext');
+	});
+	
+	$("#goodman").click(function(){
+		
+	});
+	
+	$("#sign_main").click(function(){
+		goto('#programtext');
+	});
+	
+	(function($){
+			$(window).load(function(){
+				$(".contentbox").mCustomScrollbar({
+					set_width:false, /*optional element width: boolean, pixels, percentage*/
+					set_height:false, /*optional element height: boolean, pixels, percentage*/
+					horizontalScroll:false, /*scroll horizontally: boolean*/
+					scrollInertia:550, /*scrolling inertia: integer (milliseconds)*/
+					scrollEasing:"easeOutCirc", /*scrolling easing: string*/
+					mouseWheel:"pixels", /*mousewheel support and velocity: boolean, "auto", integer, "pixels"*/
+					mouseWheelPixels:60, /*mousewheel pixels amount: integer*/
+					autoDraggerLength:true, /*auto-adjust scrollbar dragger length: boolean*/
+					scrollButtons:{ /*scroll buttons*/
+						enable:false, /*scroll buttons support: boolean*/
+						scrollType:"continuous", /*scroll buttons scrolling type: "continuous", "pixels"*/
+						scrollSpeed:20, /*scroll buttons continuous scrolling speed: integer*/
+						scrollAmount:40 /*scroll buttons pixels scroll amount: integer (pixels)*/
+					},
+					advanced:{
+						updateOnBrowserResize:true, /*update scrollbars on browser resize (for layouts based on percentages): boolean*/
+						updateOnContentResize:false, /*auto-update scrollbars on content resize (for dynamic content): boolean*/
+						autoExpandHorizontalScroll:false, /*auto expand width for horizontal scrolling: boolean*/
+						autoScrollOnFocus:true /*auto-scroll on focused elements: boolean*/
+					},
+					callbacks:{
+						onScrollStart:function(){}, /*user custom callback function on scroll start event*/
+						onScroll:function(){}, /*user custom callback function on scroll event*/
+						onTotalScroll:function(){}, /*user custom callback function on scroll end reached event*/
+						onTotalScrollBack:function(){}, /*user custom callback function on scroll begin reached event*/
+						onTotalScrollOffset:0, /*scroll end reached offset: integer (pixels)*/
+						whileScrolling:false, /*user custom callback function on scrolling event*/
+						whileScrollingInterval:30 /*interval for calling whileScrolling callback: integer (milliseconds)*/
+					}
+				});
+			});
+			})(jQuery);
+
+function goto(id){	
+	//animate to the div id.
+	$(".contentbox-wrapper").animate({"left": -($(id).position().left)}, 500);
+}
+
+
+});
+
+</script>
+
+
+</head>
+
+<body>
+
+<p class="cmu">Carnegie Mellon</p>
+<p class="iff">International Film Festival 2013</p>
+<p class="facesof">FACES OF</p>
+<p class="media">MEDIA</p>
+<p class="date">March 21 - April 13</p>
+
+
+<img id="swirl1" src="arrow_small.png"></img>
+<p id="buytix" class="link">BUY TICKETS</p>
+<img id="swirl2" src="arrow_small.png"></img>
+<p id="sponsorfest" class="link">SPONSOR THE FESTIVAL</p>
+
+<ul class="nav">
+<li id="home" class="link">home</li>
+<li id="about" class="link">about</li>
+<li id="attend" class="link">attend</li>
+<li id="program" class="link">program</li>
+<li id="participate" class="link">participate</li>
+<li id="updates" class="link">updates</li>
+<li id="support" class="link">support</li>
+<li id="contact" class="link">contact</li>
+</ul>
+
+<img id="arrow" src="arrow.jpg"></img>
+<p id="goodman" class="link">Featuring Goodman <br> Faces of Work</p>
+
+<img id="imgtop" src="imgtop.jpg">
+
+<div id="wrap">
+<div class="contentbox-wrapper">
+	
+	<div id="hometext" class="contenthome">
+		<div id="sign_main"></div>
+		
+		<img id="p1" class="rot" src="p1.jpg">
+		<img id="p2" class="rot" src="p2.jpg">
+		<img id="p3" class="rot" src="p3.jpg">
+		<img id="p4" class="rot" src="p4.jpg">
+		<img id="p5" class="rot" src="p5.jpg">
+	</div>
+	
+	<div id="abouttext" class="contentbox">
+		<h2>about</h2>
+		The Carnegie Mellon International Film Festival, sponsored by the Humanities Center, is proud to present its 2013 theme, Faces of Media.  From March 21st - April 13th, audiences will have the opportunity to enjoy Pittsburgh premiere screenings of over a dozen brand new and award-winning films from Germany, the United Kingdom, Denmark, Romania, Austria, Finland, Sweden, the Ukraine, Egypt, Iran, Japan, China, and the United States.
+		<br><br>
+		From the young protestors in Egypt who utilized social media apps like Facebook to mobilize a revolution to an American community in the near future that maintains social contact through constant live video feeds on individual home computers, the compelling real-life and fictional faces introduced by these films will provoke thoughtful questions about how our global media impacts society and vice versa.  Contemporary issues concerning the societal effects of rapid globalized media development, such as violence, (in)justice, identity transformation, voyeurism, obsession, networking, and alienation, will be highlighted in the films through the unique constructs of language, imagery, and narrative. 
+		<br><br>
+		The festival is also pleased to present a new permanent component this year, "Goodman Faces of Work" – a memorial tribute to Dr. Paul Goodman (1938-2012).  A world-renowned filmmaker, psychologist, and Carnegie Mellon professor, Paul was an active proponent of introducing global theory and a wide variety of multimedia elements into the classroom.  This annual component will incorporate some of Paul’s films along with international films related to Paul’s professional focus: the theme of work.  Whether it is the story of a 21-year-old woman from the Balkans, who struggles to stay in her village in rural Sweden after losing her factory job or the slow yet victorious rise of entrepreneur Jack Ma in his journey toward building the first Chinese Internet startup company at the dawn of the new millennium, the documentaries and feature films within the Faces of Work series will emphasize the current human challenges and achievements of diverse workers worldwide. 
+		<br><br>
+		Whether you are fluent in all things related to new media or prefer to observe the constantly changing technology trends from a distance, the 2013 Carnegie Mellon International Film Festival: Faces of Media will provide you with the perfect chance to learn more about our evolving world of globalized communication through a cinematic lens. We look forward to seeing your faces in the audience!
+
+	</div>
+	<img id="side1" src="p1.jpg">
+	<div id="attendtext" class="contentbox">
+	<h2>attend</h2>
+	Buy Tickets to <b>Danube Hospital</b> Here! <br><br>
+
+	Feb. 22, Fri.<br>
+	6:30-8:30pm: Film Screening: Danube Hospital (Donauspital). (Dir. Nikolaus Geyrhalter, Germany, 2012)<br>
+	Presented by the Carnegie Mellon Faces International Film Festival<br>
+	$5 Seniors + Students, $8 Others. Ticket can be purchased online.<br>
+	<form>
+	<br>
+	Are you a senior or a student?
+	<input type="radio" name="yesno" id="yes" value="yes" />Yes
+	<input type="radio" name="yesno" id="no" value="no" checked />No<br><br>
+	</p>
+	</form>
+	<div id="out"><div id="divA"><input type="text" id="qtA" size="1" value="1">Danube Hospital</div></div>
+	<div id="displayTotal">Total: $8.00</div><br>
+	<script>
+	var priceA = 8.00;
+	var ref = (Math.floor((Math.random()*10)+1)).toString(); //fix, make 5 digit!
+	var ticket_fee = 62200062900000000241400;	
+
+	$(document).ready(function(){
+		$("#ref_id").val(ref);
+	});
+
+	function update(){
+		var price = 0.00;
+		if ($("#yes").is(':checked')) {
+			priceA = 5.00;
+		}
+		if ($("#no").is(':checked')) {
+			priceA = 8.00;
+		}
+		price += parseInt($("#qtA").val(), 10) * priceA;
+		$("#displayTotal").html('Total: $' + price.toFixed(2));	
+	}
+
+
+		
+	$(document).ready(function(){
+		$("input").click(function() {
+			update();
+		});
+		
+		$(":text").keyup(function() {
+			update();
+		});
+		
+		$("#pay").click(function() {
+		   update();
+		   var itemNum = 1;
+		   $("#info").empty();
+			$("#info").append(" \
+				<input type=hidden name=item" + itemNum + "_name value='A'> \
+				<input type=hidden name=item" + itemNum + "_qty value=" + parseInt($('#qtA').val(), 10) + "> \
+				<input type=hidden name=item" + itemNum + "_price_each value=" + priceA +"> \
+				<input type=hidden name=item" + itemNum + "_gl_str value='6220006290000000024140001'> \
+			");
+		});	
+	});
+
+	</script>
+
+	<form name="data" id="frm" method=post action="https://ccard-submit.as.cmu.edu/cgi-bin/gather_info.cgi" onsubmit="return validate()">
+	<input type=hidden name=store_no value='MyDept'> 
+	<input type=hidden name=return_url value='http://www.cmu.edu/faces/'> 
+	<input type=hidden name=return_url_text value='Faces site'> 
+	<input type=hidden id="ref_id" name=merchant_ref_no value=''> 
+	<input type=hidden name=settle_now value='Y'> 
+	<input type=hidden name=notify_email value='jolalion@yahoo.com'> 
+	<div id="info"></div>
+
+	<input type=submit id="pay" value="Pay with Credit Card">
+
+	</form> 
+	</div>
+	<img id="side2" src="p2.jpg">
+	<div id="programtext" class="contentbox">
+		<h2>program</h2>
+		<b>Danube Hospital</b><br>
+		Directed by Nikolaus Geyrhalter; Austria | 2012 |75 min.<br>
+		February 22nd, 6:30pm at McConomy Auditorium, Carnegie Mellon University<br>
+		Presented in conjunction with the Imperfect Health Exhibition at Miller Gallery.<br>
+		<br>
+		<img src="danube1.jpg" height="300">
+		<br>
+		<br><b>Pittsburgh Premiere</b> <br>
+		<br>
+		“Geyrhalter’s tripod-mounted, impeccably-framed images capture the interactions of human and machine that have come to define the hospital experience in the 21st century”
+								   - The Hollywood Reporter
+		<br><br>
+		<b>Awards</b>
+		<br><br>
+		*Nominated for 2012 East Silver Caravan (Prague) Silver Eye Award
+		<br><br><br>
+
+		In <i>Danube Hospital</i>, sci-fi and avant-garde meet modern medicine. The setting is Austria’s Donauspital, where birth, death, and gore constitute day-to-day activity. Geyrhalter’s exquisite shot-compositions aestheticize each unit of the hospital microcosm. One might forget that what they are seeing is documentary footage—imagery of robot-like transporters and state-of-the-art computer technology echo futuristic, science fiction films of the past century (think 2001: <i>A Space Odyssey</i>, but the spaceship is actually a hospital). Scenes of meat-cutting in the cafeteria and in the cadaver-dissection room evoke the same horror. No unit is granted too much camera time; each is interdependent on the rest, and functions as an integral combination of human and machine. Media screens play a significant role—it is, after all, through television monitors that we view the stitching of internal organs and an eye surgery. Media is not merely a commercial entity or art form—<i>Danube Hospital</i> illustrates its scientific function, its penetration into multiple realms of the contemporary, digitized era. 
+		<br><br>
+		<i>Danube Hospital</i> will be preceded by a showing of Dr. Paul Goodman’s <i>Nurse</i>. As part of the Goodman Faces of Work series, the short film examines the daily work-life of one of the health industry’s most essential components.  
+		<br><br>
+		Healthy refreshments provided by Hofbräuhaus prior to the screening.
+		<br><br>
+
+		<b>About the Director</b>
+		<br><br>
+		<img src="danube2.jpg" height="200">
+		<br><br>
+		Nikolaus Geyrhalter was born in Vienna, Austria in 1972. In 1994, he founded his own production company titled Nikolaus Geyrhalter Filmproduktion (NGF). His award-winning works include <i>Das Jahr nach Dayton</i> (1997), <i>Pripyat</i> (1999), <i>Elsewhere</i> (2001), and <i>Our Daily Bread</i> (2005).
+		<br><br>
+
+		Purchase Tickets <a id="buyhere" href="#">here</a>!
+
+	</div>
+	<img id="side3" src="p3.jpg">
+	
+	<div id="participatetext" class="contentbox">
+	<h2>participate</h2>
+	<B>Requirements</B><br />
+	<UL><LI class="inbody" /><B>Subtitles</B><br /> 
+	SUBMISSIONS MUST INCLUDE ENGLISH SUBTITLES. Contact us if this presents a problem.
+
+	<LI class="inbody" /><b>Short Film Length</B><br />
+	The maximum runtime of each submission is 15 minutes.
+
+	<LI class="inbody" /><b>Number of Submissions</B><br />
+	A maximum of two short films may be submitted per director. They may both be on one or two DVDs.
+
+	<LI class="inbody" /><b>Submission fee</B><br />
+	$20.  The fee remains twenty dollars whether you are submitting one or two films.
+
+	<LI class="inbody" /><b>Submission Format</b><br />
+	Either NTSC or PAL format on DVD is acceptable. If this presents a problem, you may submit a data DVD with your film(s) as a file.
+
+	<LI class="inbody" /><b>Submission Form</B><br />
+	<a class="inbody" href="http://www.cmu.edu/faces/2013submissionform.docx">Click here</a> to download the submission form.
+
+	<LI class="inbody" /><b>Deadline</B><br />
+	All entries must be submitted by <B>February 28, 2013</B>. Submissions received after that date will not be eligible for review.
+
+	<LI class="inbody" /><b>Screening</B><br />
+	Selected submissions will not only be played in the Student Short Film Competition session, but will also be screened before feature length films during the broader International Film Festival and posted on our YouTube channel.</ul>
+	<br><br>
+	<b>Submissions</b><br />
+	THE 2013 CARNEGIE MELLON INTERNATIONAL STUDENT SHORT FILM FESTIVAL<br />
+	Faces of Media<br />
+	ATT: Jolanta Lion<br />
+	Baker Hall A 60-F<br />
+	5000 Forbes Avenue<br />
+	PITTSBURGH, PA 15213-3890<br />
+	UNITED STATES OF AMERICA<br />
+	<br><be>
+	<b>Contact Information</b><br />
+	Please email Jingya Liu at jingyal@andrew.cmu.edu or Jolanta Lion at jola@cmu.edu for payment methods, submission details, or any other questions concerning the short film competition
+	</div>
+	<img id="side4" src="p4.jpg">
+	
+	<div id="updatestext" class="contentbox">
+	<h2>updates</h2>
+	</div> 
+	<img id="side5" src="p5.jpg">
+	
+	<div id="contacttext" class="contentbox">
+	<h2>contact</h2>
+	For Festival information, please contact:
+	<br><br>
+	<b>Jolanta Lion</b><br/>
+	Festival Director<br />
+	Email: jola@cmu.edu<br />
+	Phone: (412) 445-6292
+	<br><br>
+	Mailing Address:<br />
+	The 2013 Carnegie Mellon International Film Festival: Faces of Media<br />
+	Carnegie Mellon University<br />
+	The Humanities Center<br />
+	Baker Hall A 60-F<br />
+	5000 Forbes Avenue<br />
+	Pittsburgh, PA 15213-3890<br />
+	USA
+	<br><br>
+	For Humanities Center information, please contact:
+	<br><br>
+	<b>David Shumway</b><br />
+	Humanities Center Director<br />
+	Email: shumway@cmu.edu<br />
+	Phone: (412) 268-7176
+	<br>
+	Mailing Address:<br />
+	The 2013 Carnegie Mellon International Film Festival: Faces of Media<br />
+	Department of English<br />
+	Carnegie Mellon University<br />
+	Baker Hall 259<br />
+	5000 Forbes Avenue
+
+	</div>
+	<img id="side1" src="p1.jpg">
+</div>
+</div>
+
+</body>
+
+</html>
